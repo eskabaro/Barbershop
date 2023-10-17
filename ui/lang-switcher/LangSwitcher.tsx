@@ -1,9 +1,14 @@
 'use client'
 
-import { FC } from "react";
-import { usePathname } from "next/navigation";
-import { i18n } from "@/i18n.config";
-import Link from "next/link";
+import { FC } from "react"
+
+import Link from "next/link"
+import classnames from "classnames"
+
+import { usePathname } from "next/navigation"
+import { i18n } from "@/i18n.config"
+
+import styles from './LangSwitcher.module.scss'
 
 export const LanguageSwitcher: FC = () => {
    const pathName = usePathname()
@@ -14,20 +19,20 @@ export const LanguageSwitcher: FC = () => {
       segments[1] = locale
       return segments.join('/')
    }
+
    return (
-      <ul className='flex gap-x-3'>
-         {i18n.locales.map(locale => {
-            return (
-               <li key={locale}>
-                  <Link
-                     href={redirectedPathName(locale)}
-                     className='rounded-md border bg-black px-3 py-2 text-white'
-                  >
-                     {locale}
-                  </Link>
-               </li>
-            )
-         })}
+      <ul className={styles.wrapper}>
+         {i18n.locales.map(locale => <li key={locale}>
+            <Link
+               href={redirectedPathName(locale)}
+               className={classnames({
+                  [styles.active]: pathName === '/' + locale,
+               })}
+            >
+               {locale}
+            </Link>
+         </li>
+         )}
       </ul>
    )
 }

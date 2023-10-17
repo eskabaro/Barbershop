@@ -1,3 +1,12 @@
 {
-   "header": "hello"
+   "header": {
+      "lcation": "Irpin - st. Mechnikova 108 (2nd floor)",
+      "time_work": "Working hours 9:00 - 20:00",
+      "links": [
+         "PROCESS",
+         "REVIEWS",
+         "PRICE",
+         "PRODUCTS"
+      ]
+   }
 }

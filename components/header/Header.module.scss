@@ -1,0 +1,42 @@
+.header {
+   @apply h-60 grid items-center grid-cols-3;
+
+   @media all and (max-width: '900px') {
+      @apply grid-cols-2;
+
+      
+      &__info {
+         @apply hidden;
+      }
+
+      &__links {
+         @apply hidden;
+      }
+   }
+
+
+   &__logo {
+      @apply flex items-center flex-col w-40 m-auto;
+
+      >img {
+         @apply rounded-full;
+      }
+      >p {
+         @apply text-2xl font-bold;
+      }
+
+      @media all and (max-width: '900px') {
+         @apply w-24 m-0;
+
+         >img {
+            @apply w-16 h-16;
+         }
+
+         >p {
+            @apply text-base font-bold;
+         }
+      }
+   }
+
+ 
+}

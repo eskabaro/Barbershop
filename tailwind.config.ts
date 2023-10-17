@@ -8,7 +8,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
-     
+      colors: {
+        secondary: '#282828'
+      },
+      margin: {
+        '5%': '5%'
+      }
     },
   },
   plugins: [],

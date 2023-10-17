@@ -1,0 +1,19 @@
+.links {
+   @apply flex justify-end;
+
+   @media all and (max-width: '900px') {
+      @apply block;
+   }
+
+   >ul {
+      @apply flex gap-3;
+      
+      @media all and (max-width: '900px') {
+         @apply block mt-auto;
+
+         >li {
+            @apply mt-4;
+         }
+      }
+   }
+}

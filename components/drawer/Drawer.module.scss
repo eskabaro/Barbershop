@@ -1,0 +1,15 @@
+.wr_drawer {
+   @apply flex justify-end text-white;
+
+   @media all and (min-width: '900px') {
+      @apply hidden;
+   }
+
+   .drawer {
+      @apply p-3 fixed z-10 -right-full top-0 bg-secondary w-full max-w-sm h-screen duration-300 ease-in-out;
+   
+      &.active {
+         @apply right-0 max-w-md;
+      }
+   }
+}
