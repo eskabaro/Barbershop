@@ -1,14 +1,17 @@
-import './globals.css'
+import './globals.scss'
 
 import { Locale, i18n } from '@/i18n.config'
 
 import { Roboto_Mono } from 'next/font/google'
 
-import { Header } from '@/components/header'
 import { RootProvider } from '@/providers/RootProvider'
-import { Container } from '@/components/container'
 import { ContextProvider } from '@/providers/ContextProvider'
-import { getDictionary } from '@/lib/dictionary'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  icons: '/logo.jpg',
+  title: 'Black Jack'
+}
 
 const roboto = Roboto_Mono({
   weight: ['400', '500', '600', '700'],
@@ -26,17 +29,12 @@ export default async function RootLayout({
   children: React.ReactNode
   params: { lang: Locale }
 }) {
-  const { header } = await getDictionary(params.lang)
-
   return (
     <html lang={params.lang}>
       <body className={roboto.className}>
         <RootProvider>
           <ContextProvider>
-            <Container>
-              <Header content={header} />
-              {children}
-            </Container>
+            {children}
           </ContextProvider>
         </RootProvider>
       </body>

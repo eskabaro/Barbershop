@@ -1,0 +1,5 @@
+.wr_video {
+   >video {
+      @apply absolute top-0 h-screen z-10 left-0 object-cover;
+   }
+}

@@ -1,11 +1,11 @@
 'use client'
 
-import { FC } from "react"
-import { useTheme } from "next-themes";
+import { FC, useEffect } from "react"
 import { useOutside } from "@/hooks/useOutside";
 
 import IconButton from '@mui/material/IconButton';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import CloseIcon from '@mui/icons-material/Close';
 import styles from './Drawer.module.scss'
 import cn from 'classnames';
 
@@ -21,8 +21,15 @@ interface IProps {
 }
 
 export const Drawer: FC<IProps> = ({ content }) => {
-   const { theme } = useTheme()
    const { ref, isShow, setIsShow } = useOutside(false)
+
+   useEffect(() => {
+      document.body.style.overflow = isShow ? 'hidden' : 'auto'
+
+      return () => {
+         document.body.style.overflow = 'auto'
+      }
+   }, [isShow])
 
    return (
       <div ref={ref} className={styles.wr_drawer}>
@@ -32,14 +39,29 @@ export const Drawer: FC<IProps> = ({ content }) => {
             aria-haspopup="true"
             onClick={() => setIsShow(!isShow)}
          >
-            <MoreVertIcon style={{ color: theme === 'dark' ? 'white' : 'black' }} />
+            <MoreVertIcon style={{ color: 'white' }} />
          </IconButton>
 
          <div className={cn(styles.drawer, {
             [styles.active]: isShow,
          })}>
-            <Aboutas lcation={content.lcation} time_work={content.time_work} />
-            <Links links={content.links} />
+            <header className={styles['drawer-header']}>
+               <IconButton
+                  aria-label="more"
+                  id="long-button"
+                  aria-haspopup="true"
+                  onClick={() => setIsShow(!isShow)}
+               >
+                  <CloseIcon sx={{ color: 'white' }} />
+               </IconButton>
+               <p>Black Jack</p>
+            </header>
+            <main className='flex-auto'>
+               <Links setIsShow={setIsShow} links={content.links} />
+            </main>
+            <footer>
+               <Aboutas lcation={content.lcation} time_work={content.time_work} />
+            </footer>
          </div>
       </div>
    )

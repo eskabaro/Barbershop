@@ -1,36 +1,37 @@
-import { FC } from "react"
-
-import Image from "next/image"
-import Link from "next/link"
+import { FC } from "react";
 import styles from './Header.module.scss'
+import Image from "next/image";
+import Link from "next/link";
+import { Links } from "@/ui/header-links";
+import { IPropsFirstScreen } from "../first-screen";
+import { Aboutas } from "@/ui/header-aboutas";
+import { Drawer } from "../drawer";
 
-import { Drawer } from "../drawer"
-import { Links } from "@/ui/header-links"
-import { Aboutas } from "@/ui/header-aboutas"
+interface IProps extends Omit<IPropsFirstScreen, "content"> { }
 
-interface IProps {
-   content: {
-      lcation: string
-      time_work: string
-      links: string[]
-   }
-}
+export const Header: FC<IProps> = ({ header }) => {
 
-export const Header: FC<IProps> = ({ content }) => {
    return (
       <header className={styles.header}>
          <div className={styles.header__info}>
-            <Aboutas time_work={content.time_work} lcation={content.lcation} />
+            <Aboutas time_work={header.time_work} lcation={header.lcation} />
          </div>
 
          <Link href={'/'} className={styles.header__logo}>
-            <Image src={'/logo.jpg'} width={100} height={100} alt="Logo" priority />
+            <Image
+               alt="Logo"
+               width={100}
+               height={100}
+               priority
+               src={'/logo.jpg'}
+            />
             <p>Black Jack</p>
          </Link>
 
-         <Drawer content={content} />
+         <Drawer content={header} />
+
          <div className={styles.header__links}>
-            <Links links={content.links} />
+            <Links links={header.links} />
          </div>
       </header>
    )

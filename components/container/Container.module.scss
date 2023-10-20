@@ -1,7 +1,7 @@
 .cntainer {
-   @apply w-full flex justify-center;
+   @apply w-full flex justify-center h-full;
 
    >div {
-      @apply w-full max-w-screen-2xl mr-5% ml-5%;
+      @apply w-full h-auto z-20 max-w-screen-2xl mr-5% ml-5%;
    }
 }

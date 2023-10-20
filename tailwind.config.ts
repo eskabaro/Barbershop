@@ -9,14 +9,23 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        secondary: '#282828'
+        primary: '#0D1117',
+        secondary: '#191d24'
       },
       margin: {
         '5%': '5%'
+      },
+      padding: {
+        '5%': '5%'
+      },
+      height: {
+        3: '3px'
+      },
+      spacing: {
+        '2px': '2px'
       }
     },
   },
-  plugins: [],
-  darkMode: 'class'
+  plugins: []
 }
 export default config

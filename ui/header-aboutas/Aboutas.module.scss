@@ -1,7 +1,8 @@
 .aboutas {
-   >div {
-      @apply flex items-center gap-2;
+   @media all and (max-width: '900px') {
+      @apply text-center;
    }
+
    >p {
       @apply text-xs;
    }
