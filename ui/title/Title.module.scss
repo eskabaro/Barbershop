@@ -1,0 +1,12 @@
+.title {
+   @apply text-3xl w-fit;
+
+   &.underline {
+      @apply relative pb-5 mb-7;
+
+      &::before {
+         content: '';
+         @apply absolute left-0 bottom-0 w-2/3 h-2px bg-white;
+      }
+   }
+}

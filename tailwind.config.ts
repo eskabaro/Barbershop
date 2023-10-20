@@ -13,7 +13,8 @@ const config: Config = {
         secondary: '#191d24'
       },
       margin: {
-        '5%': '5%'
+        '5%': '5%',
+        screen: '100vh'
       },
       padding: {
         '5%': '5%'
@@ -23,6 +24,9 @@ const config: Config = {
       },
       spacing: {
         '2px': '2px'
+      },
+      boxShadow: {
+        'full-bleed': '0 0 0 100vmax #191d24'
       }
     },
   },

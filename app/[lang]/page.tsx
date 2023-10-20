@@ -7,7 +7,10 @@ export default async function HomePage({
 }: {
   params: { lang: Locale }
 }) {
-  const { first_screen } = await getDictionary(lang)
+  const { first_screen, second_screen } = await getDictionary(lang)
 
-  return <Home first_screen={first_screen} />
+  return <Home
+    first_screen={first_screen}
+    second_screen={second_screen}
+  />
 }

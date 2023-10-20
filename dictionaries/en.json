@@ -15,5 +15,18 @@
          "title": "One such in the whole world",
          "btn_title": "BOOK NOW"
       }
+   },
+   "second_screen": {
+      "section_1": {
+         "title": "ABOUT US",
+         "description": "All barbershops have a special atmosphere and design. Many men are not comfortable getting their hair cut in ordinary salons with pink walls, listening to women's conversations and looking in mirrors with gold frames. Therefore, there is definitely no feeling of discomfort in barbershops. Black Jack is a place where everything is thought out to the smallest detail for your comfort - come and pump up your style with us."
+      },
+      "section_2": {
+         "titles": [
+            "STRONG DRINKS",
+            "COFFEE, TEA",
+            "GAME CONSOLE"
+         ]
+      }
    }
 }

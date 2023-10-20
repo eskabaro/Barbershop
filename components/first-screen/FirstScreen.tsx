@@ -21,7 +21,7 @@ export interface IPropsFirstScreen {
 
 export const FirstScreen: FC<IPropsFirstScreen> = ({ header, content }) => {
    return (
-      <div className={styles.wr_screen}>
+      <div className={styles.wr_screen} >
          <Video />
          <Container>
             <Header header={header} />

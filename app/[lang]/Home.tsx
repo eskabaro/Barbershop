@@ -2,8 +2,18 @@
 
 import { FC } from 'react'
 import { FirstScreen } from '@/components/first-screen'
+import { SecondScreen } from '@/components/second-screen'
 
-interface IProps {
+export type AboutUsType = {
+   title: string,
+   description: string
+}
+
+export type Section2Type = {
+   titles: string[]
+}
+
+export interface IHomeProps {
    first_screen: {
       header: {
          lcation: string,
@@ -15,14 +25,21 @@ interface IProps {
          btn_title: string
       }
    }
+   second_screen: {
+      section_1: AboutUsType,
+      section_2: Section2Type
+   }
 }
 
-export const Home: FC<IProps> = ({ first_screen }) => {
+export const Home: FC<IHomeProps> = ({ first_screen, second_screen }) => {
    return (
       <>
          <FirstScreen
             header={first_screen.header}
             content={first_screen.content}
+         />
+         <SecondScreen
+            second_screen={second_screen}
          />
       </>
    )
