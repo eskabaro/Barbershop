@@ -9,7 +9,7 @@ export const Video: FC = () => {
             muted
             autoPlay
             preload='auto'
-            src="/videos/video.mp4"
+            src="/videos/video.webm"
             controls={false}
          />
       </div>
