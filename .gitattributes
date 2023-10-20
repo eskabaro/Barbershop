@@ -1,2 +1,1 @@
-public/videos/video.mp.4 filter=lfs diff=lfs merge=lfs -text
-public/videos/video.mp4 filter=lfs diff=lfs merge=lfs -text
+public/videos/video.webm filter=lfs diff=lfs merge=lfs -text
