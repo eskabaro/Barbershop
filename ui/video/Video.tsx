@@ -1,10 +1,18 @@
 import { FC } from "react";
 import styles from './Video.module.scss'
 
-export const Video: FC = () => {
+interface IProps {
+   translateY: number
+}
+
+export const Video: FC<IProps> = ({ translateY }) => {
    return (
-      <div className={styles.wr_video}>
+      <div
+         
+         className={styles.wr_video}
+      >
          <video
+         style={{ transform: `translateY(${-translateY}px)` }}
             loop
             muted
             autoPlay

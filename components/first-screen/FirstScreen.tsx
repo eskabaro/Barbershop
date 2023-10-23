@@ -1,4 +1,4 @@
-import { FC } from "react"
+import { FC, useEffect, useState } from "react"
 import { Video } from "@/ui/video"
 import styles from './FirstScreen.module.scss'
 import { Container } from "../container"
@@ -20,9 +20,23 @@ export interface IPropsFirstScreen {
 }
 
 export const FirstScreen: FC<IPropsFirstScreen> = ({ header, content }) => {
+   const [scrollY, setScrollY] = useState<number>(0)
+
+   useEffect(() => {
+      const handleScroll = () => {
+         setScrollY(window.scrollY / 2)
+      }
+
+      window.addEventListener('scroll', handleScroll)
+
+      return () => {
+         window.removeEventListener('scroll', handleScroll)
+      }
+   }, [])
+
    return (
       <div className={styles.wr_screen} >
-         <Video />
+         <Video translateY={scrollY} />
          <Container>
             <Header header={header} />
             <div className='flex flex-col justify-center items-center p-8 h-1/2'>

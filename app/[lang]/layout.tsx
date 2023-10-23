@@ -2,7 +2,7 @@ import './globals.scss'
 
 import { Locale, i18n } from '@/i18n.config'
 
-import { Roboto_Mono } from 'next/font/google'
+import { Kanit } from 'next/font/google'
 
 import { RootProvider } from '@/providers/RootProvider'
 import { ContextProvider } from '@/providers/ContextProvider'
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: 'Black Jack'
 }
 
-const roboto = Roboto_Mono({
+const roboto = Kanit({
   weight: ['400', '500', '600', '700'],
   subsets: ['latin']
 })

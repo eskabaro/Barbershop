@@ -27,6 +27,37 @@
             "COFFEE, TEA",
             "GAME CONSOLE"
          ]
+      },
+      "section_3": {
+         "title": "SERVICES / PRICES",
+         "table_title": {
+            "first": "SERVICE",
+            "second": "TOP BARBER"
+         }
+      },
+      "section_4": {
+         "content": [
+            {
+               "title": "ADDRESS",
+               "value": [
+                  "Irpin - st. Mechnikova 108"
+               ]
+            },
+            {
+               "title": "CONTACTS",
+               "value": [
+                  "Call:",
+                  "+38 050 606 29 00",
+                  "+38 093 594 96 19"
+               ]
+            },
+            {
+               "title": "SCHEDULE",
+               "value": [
+                  "9:00 - 20:00"
+               ]
+            }
+         ]
       }
    }
 }
